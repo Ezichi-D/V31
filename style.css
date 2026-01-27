@@ -100,7 +100,7 @@ button:hover {
 
 /* Backgrounds */
 .intro {
-  background: url('loverose.webp') center/cover no-repeat;
+  background: url('loverose.webp');
 }
 
 .story {
@@ -112,7 +112,7 @@ button:hover {
 }
 
 .final {
-  background: url('heartshape.jpg') center/cover no-repeat;
+  background: url('heartshape.jpg!bwr800') center/cover no-repeat;
 }
 
 /* Responsive for tablets & phones */
