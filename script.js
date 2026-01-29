@@ -120,10 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
-  /* SEND ANSWER TO GOOGLE SHEETS */
-  window.sendAnswer = function(answer) {
-  fetch("https://script.google.com/macros/s/AKfycbyt9nkf6162uy75vv0Qw3RMDGNGheeeHTLJYTPq5uQBicVRcSM_KkvyWWnfXblV7P0W/exec", {  // <-- replace this
+ window.sendAnswer = function(answer) {
+  fetch("https://script.google.com/macros/s/AKfycbyc3VpybSLG4Tnu2iuDMhW5j902p6snyaTBl4xrrJLyeug9CRAI6dTH2HVG6oIXIpg7/exec", {  // <-- replace this
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
@@ -143,6 +141,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Google Sheets error:", err);
   });
 };
-
 
 });
