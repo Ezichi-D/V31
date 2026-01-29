@@ -121,18 +121,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* SEND ANSWER TO GOOGLE SHEETS */
-  window.sendAnswer = function(answer) {
-    fetch("https://script.google.com/macros/s/AKfycbzNxetyLg-1BwI763M7hY4iF_x29LWyUpCGQb-SMnpXAM1zLc_7sJhAiUvz5-qNAYLXmw/exec", {   // <-- replace with your Web App URL
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ response: answer })
-    })
-    .finally(() => {
-      sections[current].classList.remove("active");
-      sections[sections.length-1].classList.add("active");
-      confetti();
-      sparkle();
-    });
-  };
+ /* SEND ANSWER TO GOOGLE SHEETS */
+window.sendAnswer = function(answer) {
+  fetch("https://script.google.com/macros/s/AKfycbyhtLaLAkw_Bfz-6dOx80aI9tBtOi4r7IUtgryDHE7CwJt43R35-vwOqaNTUPD0HXLn/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify({ response: answer })
+  })
+  .then(res => res.text())
+  .then(() => {
+    // move to final screen
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.querySelector(".final").classList.add("active");
+
+    confetti();
+    sparkle();
+  })
+  .catch(err => {
+    console.error("Google Sheets error:", err);
+  });
+};
 
 });
