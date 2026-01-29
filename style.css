@@ -100,19 +100,19 @@ button:hover {
 
 /* Backgrounds */
 .intro {
-  background: url('loverose.webp');
+  background: url('first.jpg');
 }
 
 .story {
-  background: url('roseheart.webp') center/cover no-repeat;
+  background: url('12th.jpg') center/cover;
 }
 
 .question {
-  background: url('flowerheart.jpg') center/cover no-repeat;
+  background: url('16th.jpg') center/cover no-repeat;
 }
 
 .final {
-  background: url('heartshape.jpg!bwr800') center/cover no-repeat;
+  background: url('22th.jpg') center/cover no-repeat;
 }
 
 /* Responsive for tablets & phones */
