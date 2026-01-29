@@ -120,10 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
   /* SEND ANSWER TO GOOGLE SHEETS */
- /* SEND ANSWER TO GOOGLE SHEETS */
-window.sendAnswer = function(answer) {
-  fetch("https://script.google.com/macros/s/AKfycbyhtLaLAkw_Bfz-6dOx80aI9tBtOi4r7IUtgryDHE7CwJt43R35-vwOqaNTUPD0HXLn/exec", {
+  window.sendAnswer = function(answer) {
+  fetch("https://script.google.com/macros/s/AKfycbyt9nkf6162uy75vv0Qw3RMDGNGheeeHTLJYTPq5uQBicVRcSM_KkvyWWnfXblV7P0W/exec", {  // <-- replace this
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
@@ -132,7 +132,7 @@ window.sendAnswer = function(answer) {
   })
   .then(res => res.text())
   .then(() => {
-    // move to final screen
+    // Show final section + confetti
     document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
     document.querySelector(".final").classList.add("active");
 
@@ -143,5 +143,6 @@ window.sendAnswer = function(answer) {
     console.error("Google Sheets error:", err);
   });
 };
+
 
 });
